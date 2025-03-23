@@ -1,6 +1,6 @@
 // app/index.tsx
 import React, { useState } from "react";
-import { View, Alert, StyleSheet } from "react-native";
+import { View, Alert, StyleSheet, Image } from "react-native";
 import { useRouter } from "expo-router";
 import { Text, TextInput, Button } from "react-native-paper";
 
@@ -20,8 +20,12 @@ export default function LoginScreen() {
 
   return (
     <View style={styles.container}>
+      <Image
+        source={require("../assets/images/icon.png")} 
+        style={styles.logo}
+      />
       <Text variant="headlineMedium" style={styles.title}>
-        Halaman Login
+        eBite
       </Text>
       <TextInput
         label="Username"
@@ -50,6 +54,12 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
     justifyContent: "center",
+  },
+  logo: {
+    width: 120,
+    height: 120,
+    alignSelf: "center",
+    marginBottom: 16,
   },
   title: {
     textAlign: "center",
